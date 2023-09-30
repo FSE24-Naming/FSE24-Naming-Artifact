@@ -1,0 +1,9125 @@
+[
+    {
+        "operation": "Undefined",
+        "input_shape": null,
+        "output_shape": [
+            1,
+            5
+        ],
+        "node_id": "47167328455456",
+        "connects_to": [
+            "47167328454352"
+        ],
+        "type": "Input",
+        "parameters": null
+    },
+    {
+        "operation": "__getitem__",
+        "input_shape": [
+            [
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "node_id": "47167328454352",
+        "connects_to": [
+            "47167238401760"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "to",
+        "input_shape": [
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "node_id": "47167238401760",
+        "connects_to": [
+            "47167328645568"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "__rsub__",
+        "input_shape": [
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "node_id": "47167328645568",
+        "connects_to": [
+            "47167328645760"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "mul",
+        "input_shape": [
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "node_id": "47167328645760",
+        "connects_to": [
+            "47167328915168",
+            "47167329073952",
+            "47167238850160",
+            "47167239033280",
+            "47167239187664",
+            "47167239362592",
+            "47167239541616",
+            "47167239704192",
+            "47167239879120",
+            "47167240058144",
+            "47167240233072",
+            "47167240391552"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240391552",
+        "connects_to": [
+            "47167240392176"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240392176",
+        "connects_to": [
+            "47167240413296"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240413296",
+        "connects_to": [
+            "47167240414496"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240414496",
+        "connects_to": [
+            "47167240414832"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240414832",
+        "connects_to": [
+            "47167240415360"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240415360",
+        "connects_to": [
+            "47167240415888"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240415888",
+        "connects_to": [
+            "47167240433824"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240433824",
+        "connects_to": [
+            "47167240433728"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240433728",
+        "connects_to": [
+            "47167240435216"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240435216",
+        "connects_to": [
+            "47167240436560"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240436560",
+        "connects_to": [
+            "47167240466880",
+            "47167240491840"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240491840",
+        "connects_to": [
+            "47167240493184"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240493184",
+        "connects_to": [
+            "47167240493088",
+            "47167240344720"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Undefined",
+        "input_shape": [
+            1,
+            5,
+            768
+        ],
+        "output_shape": null,
+        "node_id": "47167240344720",
+        "connects_to": [],
+        "type": "Output",
+        "parameters": null
+    },
+    {
+        "operation": "__getitem__",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                768
+            ]
+        ],
+        "node_id": "47167240493088",
+        "connects_to": [
+            "47167240494960"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                768
+            ]
+        ],
+        "node_id": "47167240494960",
+        "connects_to": [
+            "47167240344144"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Tanh",
+        "input_shape": [
+            [
+                1,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                768
+            ]
+        ],
+        "node_id": "47167240344144",
+        "connects_to": [
+            "47167240345440"
+        ],
+        "type": "Middle",
+        "parameters": {}
+    },
+    {
+        "operation": "Undefined",
+        "input_shape": [
+            1,
+            768
+        ],
+        "output_shape": null,
+        "node_id": "47167240345440",
+        "connects_to": [],
+        "type": "Output",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167240466880",
+        "connects_to": [
+            "47167240466784"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167240466784",
+        "connects_to": [
+            "47167240469904"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240469904",
+        "connects_to": [
+            "47167240491072"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240491072",
+        "connects_to": [
+            "47167240491840"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240233072",
+        "connects_to": [
+            "47167240233696"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240233696",
+        "connects_to": [
+            "47167240234272"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240234272",
+        "connects_to": [
+            "47167240234560"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240234560",
+        "connects_to": [
+            "47167240235808"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240235808",
+        "connects_to": [
+            "47167240236336"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240236336",
+        "connects_to": [
+            "47167240236864"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240236864",
+        "connects_to": [
+            "47167240262992"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240262992",
+        "connects_to": [
+            "47167240262896"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240262896",
+        "connects_to": [
+            "47167240264384"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240264384",
+        "connects_to": [
+            "47167240286272"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240286272",
+        "connects_to": [
+            "47167240287856",
+            "47167240316912"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240316912",
+        "connects_to": [
+            "47167240318256"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240318256",
+        "connects_to": [
+            "47167240342496",
+            "47167240364240",
+            "47167240366304",
+            "47167240435216"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240366304",
+        "connects_to": [
+            "47167240366928"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240366928",
+        "connects_to": [
+            "47167240367840"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240367840",
+        "connects_to": [
+            "47167240414496"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240342496",
+        "connects_to": [
+            "47167240388912"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240388912",
+        "connects_to": [
+            "47167240389440"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240389440",
+        "connects_to": [
+            "47167240390496"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240390496",
+        "connects_to": [
+            "47167240391024"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240391024",
+        "connects_to": [
+            "47167240391552"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240364240",
+        "connects_to": [
+            "47167240365344"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240365344",
+        "connects_to": [
+            "47167240365680"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240365680",
+        "connects_to": [
+            "47167240389968"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167240389968",
+        "connects_to": [
+            "47167240390496"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167240287856",
+        "connects_to": [
+            "47167240287760"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167240287760",
+        "connects_to": [
+            "47167240315520"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240315520",
+        "connects_to": [
+            "47167240315424"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240315424",
+        "connects_to": [
+            "47167240316912"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240058144",
+        "connects_to": [
+            "47167240058768"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240058768",
+        "connects_to": [
+            "47167240059344"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240059344",
+        "connects_to": [
+            "47167240059632"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240059632",
+        "connects_to": [
+            "47167240060880"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240060880",
+        "connects_to": [
+            "47167240081952"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240081952",
+        "connects_to": [
+            "47167240082480"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240082480",
+        "connects_to": [
+            "47167240083968"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240083968",
+        "connects_to": [
+            "47167240083872"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240083872",
+        "connects_to": [
+            "47167240084736"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240084736",
+        "connects_to": [
+            "47167240107248"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240107248",
+        "connects_to": [
+            "47167240108832",
+            "47167240137888"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240137888",
+        "connects_to": [
+            "47167240159776"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240159776",
+        "connects_to": [
+            "47167240188112",
+            "47167240188016",
+            "47167240191376",
+            "47167240264384"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240191376",
+        "connects_to": [
+            "47167240209024"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240209024",
+        "connects_to": [
+            "47167240209360"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240209360",
+        "connects_to": [
+            "47167240234560"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240188112",
+        "connects_to": [
+            "47167240209888"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240209888",
+        "connects_to": [
+            "47167240210416"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240210416",
+        "connects_to": [
+            "47167240211472"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240211472",
+        "connects_to": [
+            "47167240212000"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240212000",
+        "connects_to": [
+            "47167240233072"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240188016",
+        "connects_to": [
+            "47167240189840"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240189840",
+        "connects_to": [
+            "47167240190752"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240190752",
+        "connects_to": [
+            "47167240210944"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167240210944",
+        "connects_to": [
+            "47167240211472"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167240108832",
+        "connects_to": [
+            "47167240108736"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167240108736",
+        "connects_to": [
+            "47167240136496"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240136496",
+        "connects_to": [
+            "47167240136400"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240136400",
+        "connects_to": [
+            "47167240137888"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239879120",
+        "connects_to": [
+            "47167239879744"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239879744",
+        "connects_to": [
+            "47167239880320"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239880320",
+        "connects_to": [
+            "47167239880272"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239880272",
+        "connects_to": [
+            "47167239902400"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239902400",
+        "connects_to": [
+            "47167239902928"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239902928",
+        "connects_to": [
+            "47167239903456"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239903456",
+        "connects_to": [
+            "47167239904944"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239904944",
+        "connects_to": [
+            "47167239930208"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239930208",
+        "connects_to": [
+            "47167239930976"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239930976",
+        "connects_to": [
+            "47167239932320"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239932320",
+        "connects_to": [
+            "47167239933904",
+            "47167239980032"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239980032",
+        "connects_to": [
+            "47167239980752"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239980752",
+        "connects_to": [
+            "47167240009088",
+            "47167240008992",
+            "47167240036992",
+            "47167240084736"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240036992",
+        "connects_to": [
+            "47167240037616"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240037616",
+        "connects_to": [
+            "47167240038528"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240038528",
+        "connects_to": [
+            "47167240059632"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240009088",
+        "connects_to": [
+            "47167240039056"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240039056",
+        "connects_to": [
+            "47167240039584"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240039584",
+        "connects_to": [
+            "47167240057088"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240057088",
+        "connects_to": [
+            "47167240057616"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167240057616",
+        "connects_to": [
+            "47167240058144"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167240008992",
+        "connects_to": [
+            "47167240010816"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167240010816",
+        "connects_to": [
+            "47167240011728"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167240011728",
+        "connects_to": [
+            "47167240040112"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167240040112",
+        "connects_to": [
+            "47167240057088"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239933904",
+        "connects_to": [
+            "47167239955072"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239955072",
+        "connects_to": [
+            "47167239957472"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239957472",
+        "connects_to": [
+            "47167239979216"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239979216",
+        "connects_to": [
+            "47167239980032"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239704192",
+        "connects_to": [
+            "47167239725360"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239725360",
+        "connects_to": [
+            "47167239725936"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239725936",
+        "connects_to": [
+            "47167239726224"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239726224",
+        "connects_to": [
+            "47167239727472"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239727472",
+        "connects_to": [
+            "47167239728000"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239728000",
+        "connects_to": [
+            "47167239728528"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239728528",
+        "connects_to": [
+            "47167239750560"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239750560",
+        "connects_to": [
+            "47167239750464"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239750464",
+        "connects_to": [
+            "47167239751952"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239751952",
+        "connects_to": [
+            "47167239753296"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239753296",
+        "connects_to": [
+            "47167239775424",
+            "47167239800384"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239800384",
+        "connects_to": [
+            "47167239801728"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239801728",
+        "connects_to": [
+            "47167239821872",
+            "47167239821776",
+            "47167239853872",
+            "47167239930976"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239853872",
+        "connects_to": [
+            "47167239854496"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239854496",
+        "connects_to": [
+            "47167239855408"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239855408",
+        "connects_to": [
+            "47167239880272"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239821872",
+        "connects_to": [
+            "47167239855936"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239855936",
+        "connects_to": [
+            "47167239877008"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239877008",
+        "connects_to": [
+            "47167239878064"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239878064",
+        "connects_to": [
+            "47167239878592"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239878592",
+        "connects_to": [
+            "47167239879120"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239821776",
+        "connects_to": [
+            "47167239852912"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239852912",
+        "connects_to": [
+            "47167239853248"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239853248",
+        "connects_to": [
+            "47167239877536"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167239877536",
+        "connects_to": [
+            "47167239878064"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239775424",
+        "connects_to": [
+            "47167239775328"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239775328",
+        "connects_to": [
+            "47167239798992"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239798992",
+        "connects_to": [
+            "47167239798896"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239798896",
+        "connects_to": [
+            "47167239800384"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239541616",
+        "connects_to": [
+            "47167239542240"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239542240",
+        "connects_to": [
+            "47167239542816"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239542816",
+        "connects_to": [
+            "47167239543104"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239543104",
+        "connects_to": [
+            "47167239544352"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239544352",
+        "connects_to": [
+            "47167239569520"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239569520",
+        "connects_to": [
+            "47167239570048"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239570048",
+        "connects_to": [
+            "47167239571536"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239571536",
+        "connects_to": [
+            "47167239571440"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239571440",
+        "connects_to": [
+            "47167239573408"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239573408",
+        "connects_to": [
+            "47167239594816"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239594816",
+        "connects_to": [
+            "47167239596400",
+            "47167239617264"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239617264",
+        "connects_to": [
+            "47167239647344"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239647344",
+        "connects_to": [
+            "47167239651040",
+            "47167239672208",
+            "47167239674848",
+            "47167239751952"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239674848",
+        "connects_to": [
+            "47167239674752"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239674752",
+        "connects_to": [
+            "47167239701024"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239701024",
+        "connects_to": [
+            "47167239726224"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239651040",
+        "connects_to": [
+            "47167239701552"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239701552",
+        "connects_to": [
+            "47167239702080"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239702080",
+        "connects_to": [
+            "47167239703136"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239703136",
+        "connects_to": [
+            "47167239703664"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239703664",
+        "connects_to": [
+            "47167239704192"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239672208",
+        "connects_to": [
+            "47167239673312"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239673312",
+        "connects_to": [
+            "47167239674224"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239674224",
+        "connects_to": [
+            "47167239702608"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167239702608",
+        "connects_to": [
+            "47167239703136"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239596400",
+        "connects_to": [
+            "47167239596304"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239596304",
+        "connects_to": [
+            "47167239615872"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239615872",
+        "connects_to": [
+            "47167239615776"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239615776",
+        "connects_to": [
+            "47167239617264"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239362592",
+        "connects_to": [
+            "47167239363216"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239363216",
+        "connects_to": [
+            "47167239363792"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239363792",
+        "connects_to": [
+            "47167239364560"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239364560",
+        "connects_to": [
+            "47167239385872"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239385872",
+        "connects_to": [
+            "47167239386400"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239386400",
+        "connects_to": [
+            "47167239386928"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239386928",
+        "connects_to": [
+            "47167239388416"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239388416",
+        "connects_to": [
+            "47167239414304"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239414304",
+        "connects_to": [
+            "47167239415360"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239415360",
+        "connects_to": [
+            "47167239415792"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239415792",
+        "connects_to": [
+            "47167239417376",
+            "47167239441712"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239441712",
+        "connects_to": [
+            "47167239464224"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239464224",
+        "connects_to": [
+            "47167239488464",
+            "47167239488368",
+            "47167239516368",
+            "47167239573408"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239516368",
+        "connects_to": [
+            "47167239516992"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239516992",
+        "connects_to": [
+            "47167239517904"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239517904",
+        "connects_to": [
+            "47167239543104"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239488464",
+        "connects_to": [
+            "47167239518432"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239518432",
+        "connects_to": [
+            "47167239518960"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239518960",
+        "connects_to": [
+            "47167239520016"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239520016",
+        "connects_to": [
+            "47167239541088"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239541088",
+        "connects_to": [
+            "47167239541616"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239488368",
+        "connects_to": [
+            "47167239490192"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239490192",
+        "connects_to": [
+            "47167239491104"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239491104",
+        "connects_to": [
+            "47167239519488"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167239519488",
+        "connects_to": [
+            "47167239520016"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239417376",
+        "connects_to": [
+            "47167239438544"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239438544",
+        "connects_to": [
+            "47167239440944"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239440944",
+        "connects_to": [
+            "47167239440848"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239440848",
+        "connects_to": [
+            "47167239441712"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239187664",
+        "connects_to": [
+            "47167239188288"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239188288",
+        "connects_to": [
+            "47167239209408"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239209408",
+        "connects_to": [
+            "47167239209696"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239209696",
+        "connects_to": [
+            "47167239210944"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239210944",
+        "connects_to": [
+            "47167239211472"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239211472",
+        "connects_to": [
+            "47167239212000"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239212000",
+        "connects_to": [
+            "47167239234032"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239234032",
+        "connects_to": [
+            "47167239233936"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239233936",
+        "connects_to": [
+            "47167239235424"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239235424",
+        "connects_to": [
+            "47167239236768"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239236768",
+        "connects_to": [
+            "47167239258896",
+            "47167239287952"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239287952",
+        "connects_to": [
+            "47167239289296"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239289296",
+        "connects_to": [
+            "47167239313536",
+            "47167239313440",
+            "47167239337344",
+            "47167239415360"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239337344",
+        "connects_to": [
+            "47167239337968"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239337968",
+        "connects_to": [
+            "47167239338880"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239338880",
+        "connects_to": [
+            "47167239364560"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239313536",
+        "connects_to": [
+            "47167239339408"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239339408",
+        "connects_to": [
+            "47167239339936"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239339936",
+        "connects_to": [
+            "47167239361536"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239361536",
+        "connects_to": [
+            "47167239362064"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239362064",
+        "connects_to": [
+            "47167239362592"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239313440",
+        "connects_to": [
+            "47167239314160"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239314160",
+        "connects_to": [
+            "47167239336720"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239336720",
+        "connects_to": [
+            "47167239361008"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167239361008",
+        "connects_to": [
+            "47167239361536"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239258896",
+        "connects_to": [
+            "47167239258800"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239258800",
+        "connects_to": [
+            "47167239261920"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239261920",
+        "connects_to": [
+            "47167239287184"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239287184",
+        "connects_to": [
+            "47167239287952"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239033280",
+        "connects_to": [
+            "47167239033904"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239033904",
+        "connects_to": [
+            "47167239034480"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239034480",
+        "connects_to": [
+            "47167239034768"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239034768",
+        "connects_to": [
+            "47167239036016"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239036016",
+        "connects_to": [
+            "47167239036544"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239036544",
+        "connects_to": [
+            "47167239057616"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239057616",
+        "connects_to": [
+            "47167239059104"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239059104",
+        "connects_to": [
+            "47167239059008"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239059008",
+        "connects_to": [
+            "47167239060496"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239060496",
+        "connects_to": [
+            "47167239082384"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239082384",
+        "connects_to": [
+            "47167239083968",
+            "47167239108928"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239108928",
+        "connects_to": [
+            "47167239110272"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239110272",
+        "connects_to": [
+            "47167239130416",
+            "47167239160400",
+            "47167239162416",
+            "47167239235424"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239162416",
+        "connects_to": [
+            "47167239163040"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239163040",
+        "connects_to": [
+            "47167239184496"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239184496",
+        "connects_to": [
+            "47167239209696"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239130416",
+        "connects_to": [
+            "47167239185024"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239185024",
+        "connects_to": [
+            "47167239185552"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239185552",
+        "connects_to": [
+            "47167239186608"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239186608",
+        "connects_to": [
+            "47167239187136"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239187136",
+        "connects_to": [
+            "47167239187664"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239160400",
+        "connects_to": [
+            "47167239161504"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239161504",
+        "connects_to": [
+            "47167239161792"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239161792",
+        "connects_to": [
+            "47167239186080"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167239186080",
+        "connects_to": [
+            "47167239186608"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239083968",
+        "connects_to": [
+            "47167239083872"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167239083872",
+        "connects_to": [
+            "47167239107536"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239107536",
+        "connects_to": [
+            "47167239107440"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167239107440",
+        "connects_to": [
+            "47167239108928"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167238850160",
+        "connects_to": [
+            "47167238850784"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167238850784",
+        "connects_to": [
+            "47167238851360"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167238851360",
+        "connects_to": [
+            "47167238851648"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167238851648",
+        "connects_to": [
+            "47167238877536"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238877536",
+        "connects_to": [
+            "47167238878064"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238878064",
+        "connects_to": [
+            "47167238878592"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238878592",
+        "connects_to": [
+            "47167238880080"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238880080",
+        "connects_to": [
+            "47167238879984"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238879984",
+        "connects_to": [
+            "47167238880848"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238880848",
+        "connects_to": [
+            "47167238903360"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238903360",
+        "connects_to": [
+            "47167238904944",
+            "47167238934480"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238934480",
+        "connects_to": [
+            "47167238955888"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238955888",
+        "connects_to": [
+            "47167238976032",
+            "47167238975936",
+            "47167238979296",
+            "47167239060496"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238979296",
+        "connects_to": [
+            "47167239005136"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239005136",
+        "connects_to": [
+            "47167239005472"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239005472",
+        "connects_to": [
+            "47167239034768"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238976032",
+        "connects_to": [
+            "47167239006000"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167239006000",
+        "connects_to": [
+            "47167239006528"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167239006528",
+        "connects_to": [
+            "47167239007584"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239007584",
+        "connects_to": [
+            "47167239008112"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167239008112",
+        "connects_to": [
+            "47167239033280"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238975936",
+        "connects_to": [
+            "47167238977760"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238977760",
+        "connects_to": [
+            "47167238978672"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167238978672",
+        "connects_to": [
+            "47167239007056"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167239007056",
+        "connects_to": [
+            "47167239007584"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167238904944",
+        "connects_to": [
+            "47167238930784"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167238930784",
+        "connects_to": [
+            "47167238932608"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238932608",
+        "connects_to": [
+            "47167238932512"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238932512",
+        "connects_to": [
+            "47167238934480"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167329073952",
+        "connects_to": [
+            "47167329074576"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167329074576",
+        "connects_to": [
+            "47167329075152"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167329075152",
+        "connects_to": [
+            "47167238697888"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167238697888",
+        "connects_to": [
+            "47167238698512"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238698512",
+        "connects_to": [
+            "47167238699040"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238699040",
+        "connects_to": [
+            "47167238699568"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238699568",
+        "connects_to": [
+            "47167238725696"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238725696",
+        "connects_to": [
+            "47167238726320"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238726320",
+        "connects_to": [
+            "47167238727088"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238727088",
+        "connects_to": [
+            "47167238728432"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238728432",
+        "connects_to": [
+            "47167238754656",
+            "47167238776432"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238776432",
+        "connects_to": [
+            "47167238776864"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238776864",
+        "connects_to": [
+            "47167238797008",
+            "47167238796912",
+            "47167238829008",
+            "47167238880848"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238829008",
+        "connects_to": [
+            "47167238829632"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238829632",
+        "connects_to": [
+            "47167238830544"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167238830544",
+        "connects_to": [
+            "47167238851648"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238797008",
+        "connects_to": [
+            "47167238831072"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238831072",
+        "connects_to": [
+            "47167238831600"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167238831600",
+        "connects_to": [
+            "47167238849104"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167238849104",
+        "connects_to": [
+            "47167238849632"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167238849632",
+        "connects_to": [
+            "47167238850160"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238796912",
+        "connects_to": [
+            "47167238798736"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167238798736",
+        "connects_to": [
+            "47167238828384"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167238828384",
+        "connects_to": [
+            "47167238848576"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167238848576",
+        "connects_to": [
+            "47167238849104"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167238754656",
+        "connects_to": [
+            "47167238754560"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167238754560",
+        "connects_to": [
+            "47167238757680"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238757680",
+        "connects_to": [
+            "47167238775376"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167238775376",
+        "connects_to": [
+            "47167238776432"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                1,
+                1,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167328915168",
+        "connects_to": [
+            "47167328928144"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "softmax",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167328928144",
+        "connects_to": [
+            "47167328928720"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167328928720",
+        "connects_to": [
+            "47167328929008"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ],
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167328929008",
+        "connects_to": [
+            "47167328930256"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167328930256",
+        "connects_to": [
+            "47167328930784"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "contiguous",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167328930784",
+        "connects_to": [
+            "47167328931312"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328931312",
+        "connects_to": [
+            "47167328945152"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328945152",
+        "connects_to": [
+            "47167328945056"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328945056",
+        "connects_to": [
+            "47167328946544"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328946544",
+        "connects_to": [
+            "47167328947888"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328947888",
+        "connects_to": [
+            "47167328970064",
+            "47167328995120"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "add",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ],
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328995120",
+        "connects_to": [
+            "47167328996464"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "LayerNorm",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328996464",
+        "connects_to": [
+            "47167329020752",
+            "47167329020704",
+            "47167329040512",
+            "47167238727088"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "normalized_shape": [
+                768
+            ],
+            "eps": 1e-12,
+            "elementwise_affine": "True"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167329040512",
+        "connects_to": [
+            "47167329041136"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167329041136",
+        "connects_to": [
+            "47167329042048"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167329042048",
+        "connects_to": [
+            "47167238697888"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167329020752",
+        "connects_to": [
+            "47167329071312"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167329071312",
+        "connects_to": [
+            "47167329071840"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167329071840",
+        "connects_to": [
+            "47167329072896"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "matmul",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ],
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167329072896",
+        "connects_to": [
+            "47167329073424"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "div",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                5
+            ]
+        ],
+        "node_id": "47167329073424",
+        "connects_to": [
+            "47167329073952"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167329020704",
+        "connects_to": [
+            "47167329039552"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "view",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "node_id": "47167329039552",
+        "connects_to": [
+            "47167329039888"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "permute",
+        "input_shape": [
+            [
+                1,
+                5,
+                12,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "node_id": "47167329039888",
+        "connects_to": [
+            "47167329072368"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "transpose",
+        "input_shape": [
+            [
+                1,
+                12,
+                5,
+                64
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                12,
+                64,
+                5
+            ]
+        ],
+        "node_id": "47167329072368",
+        "connects_to": [
+            "47167329072896"
+        ],
+        "type": "Middle",
+        "parameters": null
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167328970064",
+        "connects_to": [
+            "47167328969968"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 768,
+            "out_features": 3072
+        }
+    },
+    {
+        "operation": "GELUActivation",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "node_id": "47167328969968",
+        "connects_to": [
+            "47167328993728"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "act": "<built-in function gelu>"
+        }
+    },
+    {
+        "operation": "Linear",
+        "input_shape": [
+            [
+                1,
+                5,
+                3072
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328993728",
+        "connects_to": [
+            "47167328993632"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "in_features": 3072,
+            "out_features": 768
+        }
+    },
+    {
+        "operation": "Dropout",
+        "input_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "output_shape": [
+            [
+                1,
+                5,
+                768
+            ]
+        ],
+        "node_id": "47167328993632",
+        "connects_to": [
+            "47167328995120"
+        ],
+        "type": "Middle",
+        "parameters": {
+            "p": 0.1,
+            "inplace": "False"
+        }
+    }
+]

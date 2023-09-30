@@ -1,0 +1,56 @@
+{
+    "AlbertBackbone": [
+        "albert_base_en_uncased",
+        "albert_large_en_uncased",
+        "albert_extra_large_en_uncased",
+        "albert_extra_extra_large_en_uncased"
+    ],
+    "BertBackbone": [
+        "bert_tiny_en_uncased",
+        "bert_small_en_uncased",
+        "bert_medium_en_uncased",
+        "bert_base_en_uncased",
+        "bert_base_en",
+        "bert_base_zh",
+        "bert_base_multi",
+        "bert_large_en_uncased",
+        "bert_large_en"
+    ],
+    "DebertaV3Backbone": [
+        "deberta_v3_extra_small_en",
+        "deberta_v3_small_en",
+        "deberta_v3_base_en",
+        "deberta_v3_large_en",
+        "deberta_v3_base_multi"
+    ],
+    "DistilBertBackbone": [
+        "distil_bert_base_en_uncased",
+        "distil_bert_base_en",
+        "distil_bert_base_multi"
+    ],
+    "GPT2Backbone": [
+        "gpt2_base_en",
+        "gpt2_medium_en",
+        "gpt2_large_en",
+        "gpt2_extra_large_en",
+        "gpt2_base_en_cnn_dailymail"
+    ],
+    "FNetBackbone": [
+        "f_net_base_en",
+        "f_net_large_en"
+    ],
+    "OPTBackbone": [
+        "opt_125m_en",
+        "opt_1.3b_en",
+        "opt_2.7b_en",
+        "opt_2.7b_en"
+    ],
+    "RobertaBackbone": [
+        "roberta_base_en",
+        "roberta_large_en"
+    ],
+    "XLMRobertaBackbone": [
+        "xlm_roberta_base_multi",
+        "xlm_roberta_large_multi"
+    ]
+}

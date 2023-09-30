@@ -1,0 +1,1 @@
+{"([INPUT], Conv)": 1, "(Conv, BatchNormalization)": 20, "(BatchNormalization, Relu)": 9, "(Relu, MaxPool)": 1, "(MaxPool, Conv)": 1, "(MaxPool, Add)": 1, "(Add, Relu)": 16, "(Relu, Conv)": 18, "(Relu, Add)": 4, "(BatchNormalization, Add)": 11, "(Relu, GlobalAveragePool)": 1, "(GlobalAveragePool, Flatten)": 1, "(Flatten, Gemm)": 1, "(Gemm, [OUTPUT])": 1}

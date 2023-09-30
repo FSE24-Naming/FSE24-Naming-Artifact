@@ -1,0 +1,650 @@
+{
+    "RCNN": {
+        "OnnxModelZoo": [
+            "FasterRCNN-10",
+            "FasterRCNN-12",
+            "FasterRCNN-12-int8",
+            "FasterRCNN-12-qdq",
+            "rcnn-ilsvrc13-3",
+            "rcnn-ilsvrc13-6",
+            "rcnn-ilsvrc13-7",
+            "rcnn-ilsvrc13-8",
+            "rcnn-ilsvrc13-9"
+        ]
+    },
+    "MaskRCNN": {
+        "OnnxModelZoo": [
+            "MaskRCNN-10",
+            "MaskRCNN-12",
+            "MaskRCNN-12-int8",
+            "MaskRCNN-12-qdq"
+        ]
+    },
+    "ResNet": {
+        "OnnxModelZoo": [
+            "ResNet101-DUC-12",
+            "ResNet101-DUC-12-int8",
+            "ResNet101-DUC-7",
+            "arcfaceresnet100-11-int8",
+            "arcfaceresnet100-8",
+            "fcn-resnet101-11",
+            "fcn-resnet50-11",
+            "fcn-resnet50-12",
+            "fcn-resnet50-12-int8",
+            "fcn-resnet50-12-qdq",
+            "resnet-preproc-v1-18",
+            "resnet101-v1-7",
+            "resnet101-v2-7",
+            "resnet152-v1-7",
+            "resnet152-v2-7",
+            "resnet18-v1-7",
+            "resnet18-v2-7",
+            "resnet34-v1-7",
+            "resnet34-v2-7",
+            "resnet50-caffe2-v1-3",
+            "resnet50-caffe2-v1-6",
+            "resnet50-caffe2-v1-7",
+            "resnet50-caffe2-v1-8",
+            "resnet50-caffe2-v1-9",
+            "resnet50-v1-12",
+            "resnet50-v1-12-int8",
+            "resnet50-v1-12-qdq",
+            "resnet50-v1-7",
+            "resnet50-v2-7"
+        ],
+        "torch/vision": [
+            "fcn_resnet101",
+            "fcn_resnet50",
+            "resnet101",
+            "resnet152",
+            "resnet18",
+            "resnet34",
+            "resnet50"
+        ],
+        "kerasapp": [
+            "ResNet101",
+            "ResNet101V2",
+            "ResNet152",
+            "ResNet152V2",
+            "ResNet50",
+            "ResNet50V2",
+            "ResNetRS101",
+            "ResNetRS152",
+            "ResNetRS200",
+            "ResNetRS270",
+            "ResNetRS350",
+            "ResNetRS420",
+            "ResNetRS50"
+        ]
+    },
+    "WideResNet": {
+        "torch/vision": [
+            "wide_resnet101_2",
+            "wide_resnet50_2"
+        ]
+    },
+    "GoogleNet": {
+        "OnnxModelZoo": [
+            "age_googlenet",
+            "gender_googlenet",
+            "googlenet-12",
+            "googlenet-12-int8",
+            "googlenet-12-qdq",
+            "googlenet-3",
+            "googlenet-6",
+            "googlenet-7",
+            "googlenet-8",
+            "googlenet-9"
+        ],
+        "torch/vision": [
+            "googlenet"
+        ]
+    },
+    "Bert": {
+        "OnnxModelZoo": [
+            "bertsquad-10",
+            "bertsquad-12",
+            "bertsquad-12-int8",
+            "bertsquad-8"
+        ],
+        "kerasnlp": [
+            "bert_tiny_en_uncased",
+            "bert_small_en_uncased",
+            "bert_medium_en_uncased",
+            "bert_base_en_uncased",
+            "bert_base_en",
+            "bert_base_zh",
+            "bert_base_multi",
+            "bert_large_en_uncased",
+            "bert_large_en"
+        ]
+    },
+    "Bidaf": {
+        "OnnxModelZoo": [
+            "bidaf-11-int8",
+            "bidaf-9"
+        ]
+    },
+    "AlexNet": {
+        "OnnxModelZoo": [
+            "bvlcalexnet-12",
+            "bvlcalexnet-12-int8",
+            "bvlcalexnet-12-qdq",
+            "bvlcalexnet-3",
+            "bvlcalexnet-6",
+            "bvlcalexnet-7",
+            "bvlcalexnet-8",
+            "bvlcalexnet-9"
+        ],
+        "torch/vision": [
+            "alexnet"
+        ]
+    },
+    "CaffeNet": {
+        "OnnxModelZoo": [
+            "caffenet-12",
+            "caffenet-12-int8",
+            "caffenet-12-qdq",
+            "caffenet-3",
+            "caffenet-6",
+            "caffenet-7",
+            "caffenet-8",
+            "caffenet-9"
+        ]
+    },
+    "Candy": {
+        "OnnxModelZoo": [
+            "candy-8",
+            "candy-9"
+        ]
+    },
+    "DenseNet": {
+        "OnnxModelZoo": [
+            "densenet-12",
+            "densenet-12-int8",
+            "densenet-3",
+            "densenet-6",
+            "densenet-7",
+            "densenet-8",
+            "densenet-9"
+        ],
+        "torch/vision": [
+            "densenet121",
+            "densenet161",
+            "densenet169",
+            "densenet201"
+        ],
+        "kerasapp": [
+            "DenseNet121",
+            "DenseNet169",
+            "DenseNet201"
+        ]
+    },
+    "EfficientNet": {
+        "OnnxModelZoo": [
+            "efficientnet-lite4-11",
+            "efficientnet-lite4-11-int8",
+            "efficientnet-lite4-11-qdq"
+        ],
+        "torch/vision": [
+            "efficientnet_b0",
+            "efficientnet_b1",
+            "efficientnet_b2",
+            "efficientnet_b3",
+            "efficientnet_b4",
+            "efficientnet_b5",
+            "efficientnet_b6",
+            "efficientnet_b7",
+            "efficientnet_v2_l",
+            "efficientnet_v2_m",
+            "efficientnet_v2_s"
+        ],
+        "kerasapp": [
+            "EfficientNetB0",
+            "EfficientNetB1",
+            "EfficientNetB2",
+            "EfficientNetB3",
+            "EfficientNetB4",
+            "EfficientNetB5",
+            "EfficientNetB6",
+            "EfficientNetB7",
+            "EfficientNetV2B0",
+            "EfficientNetV2B1",
+            "EfficientNetV2B2",
+            "EfficientNetV2B3",
+            "EfficientNetV2L",
+            "EfficientNetV2M",
+            "EfficientNetV2S"
+        ]
+    },
+    "Emotion-FERPlus": {
+        "OnnxModelZoo": [
+            "emotion-ferplus-12-int8",
+            "emotion-ferplus-2",
+            "emotion-ferplus-7",
+            "emotion-ferplus-8"
+        ]
+    },
+    "GPT": {
+        "OnnxModelZoo": [
+            "gpt2-10",
+            "gpt2-lm-head-10",
+            "gpt2-lm-head-bs-12"
+        ],
+        "kerasnlp": [
+            "gpt2_base_en",
+            "gpt2_medium_en",
+            "gpt2_large_en",
+            "gpt2_extra_large_en",
+            "gpt2_base_en_cnn_dailymail"
+        ]
+    },
+    "Inception": {
+        "OnnxModelZoo": [
+            "inception-v1-12",
+            "inception-v1-12-int8",
+            "inception-v1-12-qdq",
+            "inception-v1-3",
+            "inception-v1-6",
+            "inception-v1-7",
+            "inception-v1-8",
+            "inception-v1-9",
+            "inception-v2-3",
+            "inception-v2-6",
+            "inception-v2-7",
+            "inception-v2-8",
+            "inception-v2-9"
+        ],
+        "torch/vision": [
+            "inception_v3"
+        ],
+        "kerasapp": [
+            "InceptionResNetV2",
+            "InceptionV3"
+        ]
+    },
+    "Mnist": {
+        "OnnxModelZoo": [
+            "mnist-1",
+            "mnist-12",
+            "mnist-12-int8",
+            "mnist-7",
+            "mnist-8"
+        ]
+    },
+    "MobileNet": {
+        "OnnxModelZoo": [
+            "mobilenetv2-10",
+            "mobilenetv2-12",
+            "mobilenetv2-12-int8",
+            "mobilenetv2-12-qdq",
+            "mobilenetv2-7"
+        ],
+        "torch/vision": [
+            "lraspp_mobilenet_v3_large",
+            "mobilenet_v2",
+            "mobilenet_v3_large",
+            "mobilenet_v3_small"
+        ],
+        "kerasapp": [
+            "MobileNet",
+            "MobileNetV2"
+        ]
+    },
+    "Mosaic": {
+        "OnnxModelZoo": [
+            "mosaic-8",
+            "mosaic-9"
+        ]
+    },
+    "Pointilism": {
+        "OnnxModelZoo": [
+            "pointilism-8",
+            "pointilism-9"
+        ]
+    },
+    "RainPrincess": {
+        "OnnxModelZoo": [
+            "rain-princess-8",
+            "rain-princess-9"
+        ]
+    },
+    "RetinaNet": {
+        "OnnxModelZoo": [
+            "retinanet-9"
+        ]
+    },
+    "RoBerta": {
+        "OnnxModelZoo": [
+            "roberta-base-11",
+            "roberta-sequence-classification-9"
+        ],
+        "kerasnlp": [
+            "roberta_base_en",
+            "roberta_large_en"
+        ]
+    },
+    "ShuffleNet": {
+        "OnnxModelZoo": [
+            "shufflenet-3",
+            "shufflenet-6",
+            "shufflenet-7",
+            "shufflenet-8",
+            "shufflenet-9",
+            "shufflenet-v2-10",
+            "shufflenet-v2-12",
+            "shufflenet-v2-12-int8",
+            "shufflenet-v2-12-qdq",
+            "shufflenet_v2_x0_5",
+            "shufflenet_v2_x1_0",
+            "shufflenet_v2_x1_5",
+            "shufflenet_v2_x2_0"
+        ]
+    },
+    "SqueezeNet": {
+        "OnnxModelZoo": [
+            "squeezenet1.0-12",
+            "squeezenet1.0-12-int8",
+            "squeezenet1.0-13-qdq",
+            "squeezenet1.0-3",
+            "squeezenet1.0-6",
+            "squeezenet1.0-7",
+            "squeezenet1.0-8",
+            "squeezenet1.0-9",
+            "squeezenet1.1-7",
+            "squeezenet1_0",
+            "squeezenet1_1"
+        ]
+    },
+    "SSD": {
+        "OnnxModelZoo": [
+            "ssd-10",
+            "ssd-12",
+            "ssd-12-int8",
+            "ssd-12-qdq"
+        ]
+    },
+    "SSD-MobileNet": {
+        "OnnxModelZoo": [
+            "ssd_mobilenet_v1_10",
+            "ssd_mobilenet_v1_12",
+            "ssd_mobilenet_v1_12-int8",
+            "ssd_mobilenet_v1_13-qdq"
+        ]
+    },
+    "SuperResolution": {
+        "OnnxModelZoo": [
+            "super-resolution-10"
+        ]
+    },
+    "T5": {
+        "OnnxModelZoo": [
+            "t5-decoder-with-lm-head-12",
+            "t5-encoder-12"
+        ]
+    },
+    "Yolov2": {
+        "OnnxModelZoo": [
+            "tinyyolov2-7",
+            "tinyyolov2-8",
+            "yolov2-coco-9"
+        ]
+    },
+    "Yolov3": {
+        "OnnxModelZoo": [
+            "tiny-yolov3-11",
+            "yolov3-10",
+            "yolov3-12",
+            "yolov3-12-int8"
+        ]
+    },
+    "Yolov4": {
+        "OnnxModelZoo": [
+            "yolov4"
+        ]
+    },
+    "Udnie": {
+        "OnnxModelZoo": [
+            "udnie-8",
+            "udnie-9"
+        ]
+    },
+    "Version-RFB": {
+        "OnnxModelZoo": [
+            "version-RFB-320",
+            "version-RFB-320-int8",
+            "version-RFB-640"
+        ]
+    },
+    "VGG": {
+        "OnnxModelZoo": [
+            "vgg16-12",
+            "vgg16-12-int8",
+            "vgg16-12-qdq",
+            "vgg16-7",
+            "vgg16-bn-7",
+            "vgg19-7",
+            "vgg19-bn-7",
+            "vgg19-caffe2-3",
+            "vgg19-caffe2-6",
+            "vgg19-caffe2-7",
+            "vgg19-caffe2-8",
+            "vgg19-caffe2-9",
+            "vgg_ilsvrc_16_age_chalearn_iccv2015",
+            "vgg_ilsvrc_16_age_imdb_wiki",
+            "vgg_ilsvrc_16_gender_imdb_wiki"
+        ],
+        "torch/vision": [
+            "vgg11",
+            "vgg11_bn",
+            "vgg13",
+            "vgg13_bn",
+            "vgg16",
+            "vgg16_bn",
+            "vgg19",
+            "vgg19_bn"
+        ],
+        "kerasapp": [
+            "VGG16",
+            "VGG19"
+        ]
+    },
+    "ZfNet": {
+        "OnnxModelZoo": [
+            "zfnet512-12",
+            "zfnet512-12-int8",
+            "zfnet512-12-qdq",
+            "zfnet512-3",
+            "zfnet512-6",
+            "zfnet512-7",
+            "zfnet512-8",
+            "zfnet512-9"
+        ]
+    },
+    "ConvNext": {
+        "torch/vision": [
+            "convnext_base",
+            "convnext_large",
+            "convnext_small",
+            "convnext_tiny"
+        ],
+        "kerasapp": [
+            "ConvNeXtBase",
+            "ConvNeXtLarge",
+            "ConvNeXtSmall",
+            "ConvNeXtTiny",
+            "ConvNeXtXLarge"
+        ]
+    },
+    "ViT": {
+        "torch/vision": [
+            "maxvit_t",
+            "mvit_v1_b"
+        ]
+    },
+    "MC3": {
+        "torch/vision": [
+            "mc3_18"
+        ]
+    },
+    "MnasNet": {
+        "torch/vision": [
+            "mnasnet0_5",
+            "mnasnet0_75",
+            "mnasnet1_0",
+            "mnasnet1_3"
+        ]
+    },
+    "NasNet": {
+        "kerasapp": [
+            "NASNetLarge",
+            "NASNetMobile"
+        ]
+    },
+    "R2Plus1D": {
+        "torch/vision": [
+            "r2plus1d_18"
+        ]
+    },
+    "R3D": {
+        "torch/vision": [
+            "r3d_18"
+        ]
+    },
+    "Raft": {
+        "torch/vision": [
+            "raft_large",
+            "raft_small"
+        ]
+    },
+    "RegNet": {
+        "torch/vision": [
+            "regnet_x_16gf",
+            "regnet_x_1_6gf",
+            "regnet_x_32gf",
+            "regnet_x_3_2gf",
+            "regnet_x_400mf",
+            "regnet_x_800mf",
+            "regnet_x_8gf",
+            "regnet_y_128gf",
+            "regnet_y_16gf",
+            "regnet_y_1_6gf",
+            "regnet_y_32gf",
+            "regnet_y_3_2gf",
+            "regnet_y_400mf",
+            "regnet_y_800mf",
+            "regnet_y_8gf"
+        ],
+        "kerasapp": [
+            "RegNetX002",
+            "RegNetX004",
+            "RegNetX006",
+            "RegNetX008",
+            "RegNetX016",
+            "RegNetX032",
+            "RegNetX040",
+            "RegNetX064",
+            "RegNetX080",
+            "RegNetX120",
+            "RegNetX160",
+            "RegNetX320",
+            "RegNetY002",
+            "RegNetY004",
+            "RegNetY006",
+            "RegNetY008",
+            "RegNetY016",
+            "RegNetY032",
+            "RegNetY040",
+            "RegNetY064",
+            "RegNetY080",
+            "RegNetY120",
+            "RegNetY160",
+            "RegNetY320"
+        ]
+    },
+    "ResNext": {
+        "torch/vision": [
+            "resnext101_32x8d",
+            "resnext101_64x4d",
+            "resnext50_32x4d"
+        ]
+    },
+    "S3D": {
+        "torch/vision": [
+            "s3d"
+        ]
+    },
+    "Swin3D": {
+        "torch/vision": [
+            "swin3d_b",
+            "swin3d_s",
+            "swin3d_t"
+        ]
+    },
+    "Swin": {
+        "torch/vision": [
+            "swin_b",
+            "swin_s",
+            "swin_t",
+            "swin_v2_b",
+            "swin_v2_s",
+            "swin_v2_t"
+        ]
+    },
+    "DeepLabV3": {
+        "OnnxModelZoo": [
+            "deeplabv3_resnet101",
+            "deeplabv3_resnet50",
+            "deeplabv3_mobilenet_v3_large"
+        ]
+    },
+    "Xception": {
+        "kerasapp": [
+            "Xception"
+        ]
+    },
+    "Albert": {
+        "kerasnlp": [
+            "albert_base_en_uncased",
+            "albert_large_en_uncased",
+            "albert_extra_large_en_uncased",
+            "albert_extra_extra_large_en_uncased"
+        ]
+    },
+    "DeBerta": {
+        "kerasnlp": [
+            "deberta_v3_extra_small_en",
+            "deberta_v3_small_en",
+            "deberta_v3_base_en",
+            "deberta_v3_large_en",
+            "deberta_v3_base_multi"
+        ]
+    },
+    "DistillBert": {
+        "kerasnlp": [
+            "distil_bert_base_en_uncased",
+            "distil_bert_base_en",
+            "distil_bert_base_multi"
+        ]
+    },
+    "FNet": {
+        "kerasnlp": [
+            "f_net_base_en",
+            "f_net_large_en"
+        ]
+    },
+    "OPT": {
+        "kerasnlp": [
+            "opt_125m_en",
+            "opt_1.3b_en",
+            "opt_2.7b_en",
+            "opt_2.7b_en"
+        ]
+    },
+    "XLMRoberta": {
+        "kerasnlp": [
+            "xlm_roberta_base_multi",
+            "xlm_roberta_large_multi"
+        ]
+    }
+}
